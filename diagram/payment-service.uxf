@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>112</x>
+      <y>176</y>
+      <w>304</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>CreditCardPaymentService
+&lt;&lt;interface&gt;&gt;
+--
++refund(serviceRequest): ServiceResponse
++payout(serviceRequest): ServiceResponse
++authorizePayment(serviceRequest): ServiceResponse
++cancelPayment(serviceRequest): ServiceResponse</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>88</x>
+      <y>576</y>
+      <w>304</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>AlternativePaymentService
+--
+-paymentProcessor: AlternativePaymentProcessor
+--
++authorizePayment(serviceRequest): ServiceResponse
++cancelPayment(serviceRequest): ServiceResponse
++inquire(serviceRequest): ServiceResponse
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>600</x>
+      <y>176</y>
+      <w>312</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>CreditCardPaymentProcessor
+&lt;&lt;interface&gt;&gt;
+--
++authorizePayment(authorizeRequest): ServiceResponse
++cancelPayment(cancelRequest): ServiceResponse
++refund(refundRequest): ServiceResponse
++payout(payoutRequest): ServiceResponse
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>440</x>
+      <y>576</y>
+      <w>320</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>AlternativePaymentProcessor
+--
++authorizePayment(authorizeRequest): ServiceResponse
++cancelPayment(cancelRequest): ServiceResponse
++inquire(inquireRequest): ServiceResponse
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>600</x>
+      <y>328</y>
+      <w>312</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>CyberSourcePaymentProcessor
+--
+-authorization: Authorization
+-cancel: Cancel
+-refund: Refund
+--
++authorizePayment(authorizeRequest): ServiceResponse
++cancelPayment(cancelRequest): ServiceResponse
++refund(refundRequest): ServiceResponse
++payout(payoutRequest): ServiceResponse</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>752</x>
+      <y>256</y>
+      <w>24</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1056</x>
+      <y>432</y>
+      <w>328</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>TransactionSteps&lt;T, R&gt;
+&lt;&lt;interface&gt;&gt;
+--
++buildRequest(serviceRequest): processorRequest
++sendRequest(processorRequest): processorResponse
++buildResponse(processorResponse): serviceResponse
++save()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1144</x>
+      <y>592</y>
+      <w>160</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>RefundSteps&lt;T, R&gt;
+--
+-transformer: Transformer
+--
++buildRequest()
++sendRequest()
++buildResponse()
++save()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>952</x>
+      <y>592</y>
+      <w>160</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>AuthorizationSteps&lt;T, R&gt;
+--
+-transformer: Transformer
+--
++buildRequest()
++sendRequest()
++buildResponse()
++save()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1336</x>
+      <y>592</y>
+      <w>160</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>CancelSteps&lt;T, R&gt;
+--
+-transformer: Transformer
+--
++buildRequest()
++sendRequest()
++buildResponse()
++save()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1088</x>
+      <y>320</y>
+      <w>256</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>/Cancel&lt;T, R&gt;/
+--
+-cancelSteps: TransactionSteps
+--
+/+authorize(serviceRequest): serviceResponse/
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1088</x>
+      <y>248</y>
+      <w>240</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>/Refund&lt;T, R&gt;/
+--
+-refundSteps: TransactionSteps
+--
+/+refund(serviceRequest): serviceResponse/
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1088</x>
+      <y>176</y>
+      <w>256</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>/Authorization&lt;T, R&gt;/
+--
+-authorizationSteps: TransactionSteps
+--
+/+authorize(serviceRequest): serviceResponse/
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>112</x>
+      <y>328</y>
+      <w>280</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>CybersourcePaymentService
+--
+-paymentProcessor: CybersourcePaymentProcessor
+--
++refund(serviceRequest): ServiceResponse
++payout(serviceRequest): ServiceResponse
++authorizePayment(serviceRequest): ServiceResponse
++cancelPayment(serviceRequest): ServiceResponse</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>248</x>
+      <y>264</y>
+      <w>24</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>408</x>
+      <y>200</y>
+      <w>208</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;reference&gt;&gt;
+lt=&lt;&lt;&lt;&lt;-&gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;240.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>904</x>
+      <y>184</y>
+      <w>200</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;reference&gt;&gt;
+lt=&lt;&lt;&lt;&lt;-&gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;230.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>904</x>
+      <y>192</y>
+      <w>200</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;reference&gt;&gt;
+lt=&lt;&lt;&lt;&lt;-&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;230.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>904</x>
+      <y>192</y>
+      <w>200</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;reference&gt;&gt;
+lt=&lt;&lt;&lt;&lt;-&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;230.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1216</x>
+      <y>512</y>
+      <w>24</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1336</x>
+      <y>336</y>
+      <w>200</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;reference&gt;&gt;
+lt=&lt;&lt;&lt;&lt;-&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;150.0;10.0;150.0;150.0;60.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1216</x>
+      <y>512</y>
+      <w>216</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0;250.0;60.0;250.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1016</x>
+      <y>512</y>
+      <w>224</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>260.0;10.0;260.0;60.0;10.0;60.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>304</x>
+      <y>472</y>
+      <w>208</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>Will introduce same bride pattern 
+as credit card processing. Makes 
+use of the transaction/transaction
+steps model. New transaction types 
+can be easily introduced. 
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
