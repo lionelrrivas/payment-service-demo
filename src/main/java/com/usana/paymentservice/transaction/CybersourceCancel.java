@@ -5,9 +5,9 @@ import com.usana.paymentservice.model.ServiceResponse;
 import com.usana.paymentservice.model.cybersource.CybersourceCancelRequest;
 import com.usana.paymentservice.model.cybersource.CybersourceCancelResponse;
 
-public class CybersourseCancel extends Cancel<CybersourceCancelResponse, CybersourceCancelRequest> {
+public class CybersourceCancel extends Cancel<CybersourceCancelResponse, CybersourceCancelRequest> {
 
-    public CybersourseCancel(TransactionSteps<CybersourceCancelResponse, CybersourceCancelRequest> cancelTransaction) {
+    public CybersourceCancel(TransactionSteps<CybersourceCancelResponse, CybersourceCancelRequest> cancelTransaction) {
         super(cancelTransaction);
     }
     

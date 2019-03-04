@@ -18,7 +18,7 @@ import com.usana.paymentservice.transaction.CybersourceAuthorization;
 import com.usana.paymentservice.transaction.CybersourceCancelSteps;
 import com.usana.paymentservice.transaction.CybersourceRefund;
 import com.usana.paymentservice.transaction.CybersourceRefundSteps;
-import com.usana.paymentservice.transaction.CybersourseCancel;
+import com.usana.paymentservice.transaction.CybersourceCancel;
 import com.usana.paymentservice.transaction.Refund;
 import com.usana.paymentservice.transaction.TransactionSteps;
 
@@ -51,7 +51,7 @@ public class PaymentServiceDemo {
     }
     
     static Cancel<CybersourceCancelResponse, CybersourceCancelRequest> getCancel() {
-        return new CybersourseCancel(getCancelSteps());
+        return new CybersourceCancel(getCancelSteps());
     }
     
     static Refund<CybersourceRefundResponse, CybersourceRefundRequest> getRefund() {

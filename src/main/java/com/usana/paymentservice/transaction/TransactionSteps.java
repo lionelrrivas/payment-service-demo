@@ -6,9 +6,9 @@ import com.usana.paymentservice.model.ServiceResponse;
 public interface TransactionSteps<T, R> {
     R buildRequest(ServiceRequest serviceRequest);
     
-    T sendRequest(R r);
+    T sendRequest(R request);
     
-    ServiceResponse buildResponse(T t);
+    ServiceResponse buildResponse(T response);
     
-    void save(T t, R r);
+    void save(T response, R request);
 }

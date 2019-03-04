@@ -5,7 +5,7 @@ import com.usana.paymentservice.model.ServiceResponse;
 
 public interface CreditCardPaymentService {
     
-    public abstract ServiceResponse authorizePayment(ServiceRequest serviceRequest);
-    public abstract ServiceResponse cancelPayment(ServiceRequest serviceRequest);
-    public abstract ServiceResponse refundPayment(ServiceRequest serviceRequest);
+    ServiceResponse authorizePayment(ServiceRequest serviceRequest);
+    ServiceResponse cancelPayment(ServiceRequest serviceRequest);
+    ServiceResponse refundPayment(ServiceRequest serviceRequest);
 }
