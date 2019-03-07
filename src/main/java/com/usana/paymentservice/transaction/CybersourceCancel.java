@@ -11,7 +11,7 @@ public class CybersourceCancel extends Cancel<CybersourceCancelResponse, Cyberso
         super(cancelTransaction);
     }
     
-     @Override
+    @Override
     public ServiceResponse cancel(ServiceRequest serviceRequest) {
         CybersourceCancelRequest cancelRequest = transactionSteps.buildRequest(serviceRequest);
         CybersourceCancelResponse cancelResponse = transactionSteps.sendRequest(cancelRequest);

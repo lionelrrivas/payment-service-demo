@@ -1,12 +1,10 @@
-package com.usana.paymentservice.model.cybersource;
+package com.usana.paymentservice.model.amex;
 
-public class CybersourceAuthRequest {
-    
+public class AmexAuthRequest {
     private String token;
     private String orderId;
-    private String currencyCode;
+    private String currency;
     private String amount;
-    private String merchantId;
 
     public String getToken() {
         return token;
@@ -24,12 +22,12 @@ public class CybersourceAuthRequest {
         this.orderId = orderId;
     }
 
-    public String getCurrencyCode() {
-        return currencyCode;
+    public String getCurrency() {
+        return currency;
     }
 
-    public void setCurrencyCode(String currencyCode) {
-        this.currencyCode = currencyCode;
+    public void setCurrency(String currency) {
+        this.currency = currency;
     }
 
     public String getAmount() {
@@ -38,13 +36,5 @@ public class CybersourceAuthRequest {
 
     public void setAmount(String amount) {
         this.amount = amount;
-    }
-
-    public String getMerchantId() {
-        return merchantId;
-    }
-
-    public void setMerchantId(String merchantId) {
-        this.merchantId = merchantId;
     }
 }

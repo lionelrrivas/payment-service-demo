@@ -1,6 +1,7 @@
 package com.usana.paymentservice.demo;
 
 import com.usana.paymentservice.model.ServiceRequest;
+import com.usana.paymentservice.model.ServiceResponse;
 import com.usana.paymentservice.model.cybersource.CybersourceAuthRequest;
 import com.usana.paymentservice.model.cybersource.CybersourceAuthResponse;
 import com.usana.paymentservice.model.cybersource.CybersourceCancelRequest;
@@ -28,13 +29,16 @@ public class PaymentServiceDemo {
         CreditCardPaymentProcessor paymentProcessor = new CyberSourceProcessor(getCancel(), getAuthorization(), getRefund());
         CreditCardPaymentService paymentService = new CyberSourcePaymentService(paymentProcessor);
         
-        paymentService.authorizePayment(new ServiceRequest());
+        ServiceResponse authorizePaymentResponse = paymentService.authorizePayment(getServiceRequest());
+        System.out.println("auth response = " + authorizePaymentResponse.getOrderId() + ", " + authorizePaymentResponse.getStatusCode());
         System.out.println("----------------------------------");
         
-        paymentService.refundPayment(new ServiceRequest());
+        ServiceResponse refundPaymentResponse = paymentService.refundPayment(getServiceRequest());
+        System.out.println("refund response = " + refundPaymentResponse.getOrderId() + ", " + refundPaymentResponse.getStatusCode());
         System.out.println("----------------------------------");
         
-        paymentService.cancelPayment(new ServiceRequest());
+        ServiceResponse cancelPaymentResponse = paymentService.cancelPayment(getServiceRequest());
+        System.out.println("cancel response = " + cancelPaymentResponse.getOrderId() + ", " + cancelPaymentResponse.getStatusCode());
         System.out.println("----------------------------------");
     }
     
@@ -60,5 +64,14 @@ public class PaymentServiceDemo {
     
     static Authorization<CybersourceAuthResponse, CybersourceAuthRequest> getAuthorization() {
         return new CybersourceAuthorization(getAuthSteps());
+    }
+    
+    static ServiceRequest getServiceRequest() {
+        ServiceRequest serviceRequest = new ServiceRequest();
+        serviceRequest.setAmount("100.00");
+        serviceRequest.setCurrencyCode("USD");
+        serviceRequest.setOrderId("123456789");
+        serviceRequest.setToken("411111ABCDEF1111");
+        return serviceRequest; 
     }
 }

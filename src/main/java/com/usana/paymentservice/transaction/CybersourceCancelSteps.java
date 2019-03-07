@@ -4,29 +4,35 @@ import com.usana.paymentservice.model.cybersource.CybersourceCancelRequest;
 import com.usana.paymentservice.model.cybersource.CybersourceCancelResponse;
 import com.usana.paymentservice.model.ServiceRequest;
 import com.usana.paymentservice.model.ServiceResponse;
+import com.usana.paymentservice.transformer.amex.CybersourceTransformers;
 
 public class CybersourceCancelSteps implements TransactionSteps<CybersourceCancelResponse, CybersourceCancelRequest> {
 
     @Override
     public CybersourceCancelRequest buildRequest(ServiceRequest serviceRequest) {
         System.out.println("building CybersourceCancelRequest from service request.");
-        return new CybersourceCancelRequest();
+        CybersourceCancelRequest cancelRequest = CybersourceTransformers.cancelRequestTransformer().apply(serviceRequest);
+        return cancelRequest;
     }
 
     @Override
-    public CybersourceCancelResponse sendRequest(CybersourceCancelRequest r) {
+    public CybersourceCancelResponse sendRequest(CybersourceCancelRequest cancelRequest) {
         System.out.println("sending CybersourceCancelRequest to Cybersource.");
-        return new CybersourceCancelResponse();
+        CybersourceCancelResponse cancelResponse = new CybersourceCancelResponse();
+        cancelResponse.setOrderId(cancelRequest.getOrderId());
+        cancelResponse.setStatusCode("CANCELLED");
+        return cancelResponse;
     }
 
     @Override
-    public ServiceResponse buildResponse(CybersourceCancelResponse t) {
+    public ServiceResponse buildResponse(CybersourceCancelResponse cancelResponse) {
         System.out.println("building ServiceResponse from CybersourceCancelResponse.");
-        return new ServiceResponse();
+        ServiceResponse serviceResponse = CybersourceTransformers.cancelResponseTransformer().apply(cancelResponse);
+        return serviceResponse;
     }
 
     @Override
-    public void save(CybersourceCancelResponse t, CybersourceCancelRequest r) {
+    public void save(CybersourceCancelResponse cancelResponse, CybersourceCancelRequest cancelRequest) {
         System.out.println("saving transaction to DB");
     }
 }
