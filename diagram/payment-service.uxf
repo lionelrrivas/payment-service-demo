@@ -5,7 +5,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>112</x>
-      <y>176</y>
+      <y>160</y>
       <w>304</w>
       <h>96</h>
     </coordinates>
@@ -22,7 +22,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>88</x>
-      <y>576</y>
+      <y>560</y>
       <w>304</w>
       <h>80</h>
     </coordinates>
@@ -41,7 +41,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>600</x>
-      <y>176</y>
+      <y>160</y>
       <w>312</w>
       <h>88</h>
     </coordinates>
@@ -60,7 +60,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>440</x>
-      <y>576</y>
+      <y>560</y>
       <w>320</w>
       <h>64</h>
     </coordinates>
@@ -76,7 +76,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>600</x>
-      <y>328</y>
+      <y>312</y>
       <w>312</w>
       <h>120</h>
     </coordinates>
@@ -96,7 +96,7 @@
     <id>Relation</id>
     <coordinates>
       <x>752</x>
-      <y>256</y>
+      <y>240</y>
       <w>24</w>
       <h>88</h>
     </coordinates>
@@ -107,7 +107,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>1056</x>
-      <y>432</y>
+      <y>416</y>
       <w>328</w>
       <h>88</h>
     </coordinates>
@@ -124,13 +124,14 @@
     <id>UMLClass</id>
     <coordinates>
       <x>1144</x>
-      <y>592</y>
-      <w>160</w>
-      <h>96</h>
+      <y>576</y>
+      <w>168</w>
+      <h>104</h>
     </coordinates>
     <panel_attributes>RefundSteps&lt;T, R&gt;
 --
--transformer: Transformer
+-transformer1: Transformer
+-transformer2: Transformer
 --
 +buildRequest()
 +sendRequest()
@@ -142,13 +143,14 @@
     <id>UMLClass</id>
     <coordinates>
       <x>952</x>
-      <y>592</y>
-      <w>160</w>
-      <h>96</h>
+      <y>576</y>
+      <w>168</w>
+      <h>104</h>
     </coordinates>
     <panel_attributes>AuthorizationSteps&lt;T, R&gt;
 --
--transformer: Transformer
+-transformer1: Transformer
+-transformer2: Transformer
 --
 +buildRequest()
 +sendRequest()
@@ -160,13 +162,14 @@
     <id>UMLClass</id>
     <coordinates>
       <x>1336</x>
-      <y>592</y>
-      <w>160</w>
-      <h>96</h>
+      <y>576</y>
+      <w>168</w>
+      <h>104</h>
     </coordinates>
     <panel_attributes>CancelSteps&lt;T, R&gt;
 --
--transformer: Transformer
+-transformer1: Transformer
+-transformer2: Transformer
 --
 +buildRequest()
 +sendRequest()
@@ -178,7 +181,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>1088</x>
-      <y>320</y>
+      <y>304</y>
       <w>256</w>
       <h>56</h>
     </coordinates>
@@ -194,7 +197,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>1088</x>
-      <y>248</y>
+      <y>232</y>
       <w>240</w>
       <h>56</h>
     </coordinates>
@@ -210,7 +213,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>1088</x>
-      <y>176</y>
+      <y>160</y>
       <w>256</w>
       <h>56</h>
     </coordinates>
@@ -226,7 +229,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>112</x>
-      <y>328</y>
+      <y>312</y>
       <w>280</w>
       <h>96</h>
     </coordinates>
@@ -244,7 +247,7 @@
     <id>Relation</id>
     <coordinates>
       <x>248</x>
-      <y>264</y>
+      <y>248</y>
       <w>24</w>
       <h>80</h>
     </coordinates>
@@ -255,55 +258,55 @@
     <id>Relation</id>
     <coordinates>
       <x>408</x>
-      <y>200</y>
+      <y>184</y>
       <w>208</w>
       <h>32</h>
     </coordinates>
     <panel_attributes>&lt;&lt;reference&gt;&gt;
-lt=&lt;&lt;&lt;&lt;-&gt;</panel_attributes>
+lt=&lt;&lt;&lt;&lt;&lt;-&gt;</panel_attributes>
     <additional_attributes>10.0;20.0;240.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>904</x>
-      <y>184</y>
+      <y>168</y>
       <w>200</w>
       <h>32</h>
     </coordinates>
     <panel_attributes>&lt;&lt;reference&gt;&gt;
-lt=&lt;&lt;&lt;&lt;-&gt;</panel_attributes>
+lt=&lt;&lt;&lt;&lt;&lt;-&gt;</panel_attributes>
     <additional_attributes>10.0;20.0;230.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>904</x>
-      <y>192</y>
+      <y>176</y>
       <w>200</w>
       <h>80</h>
     </coordinates>
     <panel_attributes>&lt;&lt;reference&gt;&gt;
-lt=&lt;&lt;&lt;&lt;-&gt;</panel_attributes>
+lt=&lt;&lt;&lt;&lt;&lt;-&gt;</panel_attributes>
     <additional_attributes>10.0;10.0;230.0;80.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>904</x>
-      <y>192</y>
+      <y>176</y>
       <w>200</w>
       <h>152</h>
     </coordinates>
     <panel_attributes>&lt;&lt;reference&gt;&gt;
-lt=&lt;&lt;&lt;&lt;-&gt;</panel_attributes>
+lt=&lt;&lt;&lt;&lt;&lt;-&gt;</panel_attributes>
     <additional_attributes>10.0;10.0;230.0;170.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>1216</x>
-      <y>512</y>
+      <y>496</y>
       <w>24</w>
       <h>96</h>
     </coordinates>
@@ -314,19 +317,19 @@ lt=&lt;&lt;&lt;&lt;-&gt;</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1336</x>
-      <y>336</y>
+      <y>320</y>
       <w>200</w>
       <h>136</h>
     </coordinates>
     <panel_attributes>&lt;&lt;reference&gt;&gt;
-lt=&lt;&lt;&lt;&lt;-&gt;</panel_attributes>
+lt=&lt;&lt;&lt;&lt;&lt;-&gt;</panel_attributes>
     <additional_attributes>10.0;10.0;150.0;10.0;150.0;150.0;60.0;150.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>1216</x>
-      <y>512</y>
+      <y>496</y>
       <w>216</w>
       <h>96</h>
     </coordinates>
@@ -337,7 +340,7 @@ lt=&lt;&lt;&lt;&lt;-&gt;</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1016</x>
-      <y>512</y>
+      <y>496</y>
       <w>224</w>
       <h>96</h>
     </coordinates>
@@ -348,7 +351,7 @@ lt=&lt;&lt;&lt;&lt;-&gt;</panel_attributes>
     <id>UMLNote</id>
     <coordinates>
       <x>304</x>
-      <y>472</y>
+      <y>456</y>
       <w>208</w>
       <h>88</h>
     </coordinates>
@@ -359,5 +362,33 @@ steps model. New transaction types
 can be easily introduced. 
 </panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>792</x>
+      <y>664</y>
+      <w>104</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>Transformer
+&lt;&lt;interface&gt;&gt;
+-
++apply(T): R
+/+transform(T): R/
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>840</x>
+      <y>600</y>
+      <w>128</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;reference&gt;&gt;
+lt=&lt;&lt;&lt;&lt;&lt;-&gt;</panel_attributes>
+    <additional_attributes>10.0;80.0;140.0;10.0</additional_attributes>
   </element>
 </diagram>
