@@ -1,5 +1,8 @@
 package com.usana.paymentservice.model.cybersource;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
 public class CybersourceRefundResponse {
     private String orderId;
     private String statusCode;
@@ -18,5 +21,13 @@ public class CybersourceRefundResponse {
 
     public void setStatusCode(String statusCode) {
         this.statusCode = statusCode;
+    }
+    
+    @Override
+    public String toString() {
+        return new ToStringBuilder(this, ToStringStyle.JSON_STYLE)
+                .append("orderId", orderId)
+                .append("statusCode", statusCode)
+                .toString();
     }
 }

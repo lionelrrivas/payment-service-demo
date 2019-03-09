@@ -30,15 +30,15 @@ public class PaymentServiceDemo {
         CreditCardPaymentService paymentService = new CyberSourcePaymentService(paymentProcessor);
         
         ServiceResponse authorizePaymentResponse = paymentService.authorizePayment(getServiceRequest());
-        System.out.println("auth response = " + authorizePaymentResponse.getOrderId() + ", " + authorizePaymentResponse.getStatusCode());
+        System.out.println("auth response = " + authorizePaymentResponse);
         System.out.println("----------------------------------");
         
         ServiceResponse refundPaymentResponse = paymentService.refundPayment(getServiceRequest());
-        System.out.println("refund response = " + refundPaymentResponse.getOrderId() + ", " + refundPaymentResponse.getStatusCode());
+        System.out.println("refund response = " + refundPaymentResponse);
         System.out.println("----------------------------------");
         
         ServiceResponse cancelPaymentResponse = paymentService.cancelPayment(getServiceRequest());
-        System.out.println("cancel response = " + cancelPaymentResponse.getOrderId() + ", " + cancelPaymentResponse.getStatusCode());
+        System.out.println("cancel response = " + cancelPaymentResponse);
         System.out.println("----------------------------------");
     }
     

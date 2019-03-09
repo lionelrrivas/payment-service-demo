@@ -4,7 +4,7 @@ import com.usana.paymentservice.model.ServiceRequest;
 import com.usana.paymentservice.model.ServiceResponse;
 import com.usana.paymentservice.model.cybersource.CybersourceRefundRequest;
 import com.usana.paymentservice.model.cybersource.CybersourceRefundResponse;
-import com.usana.paymentservice.transformer.amex.CybersourceTransformers;
+import com.usana.paymentservice.transformer.cybersource.CybersourceTransformers;
 
 public class CybersourceRefundSteps implements TransactionSteps<CybersourceRefundResponse, CybersourceRefundRequest> {
 
@@ -19,7 +19,8 @@ public class CybersourceRefundSteps implements TransactionSteps<CybersourceRefun
 
     @Override
     public CybersourceRefundResponse sendRequest(CybersourceRefundRequest refundRequest) {
-        System.out.println("sending CybersourceRefundRequest to Cybersource.");
+        System.out.print("sending CybersourceRefundRequest to Cybersource.");
+        System.out.println(" refundRequest = " + refundRequest);
         CybersourceRefundResponse refundResponse = new CybersourceRefundResponse();
         refundResponse.setOrderId(refundRequest.getOrderId());
         refundResponse.setStatusCode("REFUNDED");

@@ -4,7 +4,7 @@ import com.usana.paymentservice.model.cybersource.CybersourceAuthRequest;
 import com.usana.paymentservice.model.cybersource.CybersourceAuthResponse;
 import com.usana.paymentservice.model.ServiceRequest;
 import com.usana.paymentservice.model.ServiceResponse;
-import com.usana.paymentservice.transformer.amex.CybersourceTransformers;
+import com.usana.paymentservice.transformer.cybersource.CybersourceTransformers;
 
 public class CybersourceAuthSteps implements TransactionSteps<CybersourceAuthResponse, CybersourceAuthRequest> {
     
@@ -21,7 +21,8 @@ public class CybersourceAuthSteps implements TransactionSteps<CybersourceAuthRes
 
     @Override
     public CybersourceAuthResponse sendRequest(CybersourceAuthRequest authRequest) {
-        System.out.println("sending CybersourceAuthRequest to Cybersource.");
+        System.out.print("sending CybersourceAuthRequest to Cybersource.");
+        System.out.println(" authRequest = " + authRequest);
         CybersourceAuthResponse authResponse = new CybersourceAuthResponse();
         authResponse.setOrderId(authRequest.getOrderId());
         authResponse.setStatusCode("APPROVED");

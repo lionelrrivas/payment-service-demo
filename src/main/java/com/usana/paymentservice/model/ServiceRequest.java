@@ -1,5 +1,8 @@
 package com.usana.paymentservice.model;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
 public class ServiceRequest {
     
     private String token;
@@ -37,5 +40,15 @@ public class ServiceRequest {
 
     public void setAmount(String amount) {
         this.amount = amount;
+    }
+    
+     @Override
+    public String toString() {
+        return new ToStringBuilder(this, ToStringStyle.JSON_STYLE)
+                .append("token", token)
+                .append("orderId", orderId)
+                .append("currencyCode", currencyCode)
+                .append("amount", amount)
+                .toString();
     }
 }

@@ -4,7 +4,7 @@ import com.usana.paymentservice.model.cybersource.CybersourceCancelRequest;
 import com.usana.paymentservice.model.cybersource.CybersourceCancelResponse;
 import com.usana.paymentservice.model.ServiceRequest;
 import com.usana.paymentservice.model.ServiceResponse;
-import com.usana.paymentservice.transformer.amex.CybersourceTransformers;
+import com.usana.paymentservice.transformer.cybersource.CybersourceTransformers;
 
 public class CybersourceCancelSteps implements TransactionSteps<CybersourceCancelResponse, CybersourceCancelRequest> {
 
@@ -17,7 +17,8 @@ public class CybersourceCancelSteps implements TransactionSteps<CybersourceCance
 
     @Override
     public CybersourceCancelResponse sendRequest(CybersourceCancelRequest cancelRequest) {
-        System.out.println("sending CybersourceCancelRequest to Cybersource.");
+        System.out.print("sending CybersourceCancelRequest to Cybersource.");
+        System.out.println(" cancelRequest = " + cancelRequest);
         CybersourceCancelResponse cancelResponse = new CybersourceCancelResponse();
         cancelResponse.setOrderId(cancelRequest.getOrderId());
         cancelResponse.setStatusCode("CANCELLED");

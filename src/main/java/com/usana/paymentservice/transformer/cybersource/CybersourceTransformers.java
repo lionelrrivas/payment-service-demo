@@ -1,4 +1,4 @@
-package com.usana.paymentservice.transformer.amex;
+package com.usana.paymentservice.transformer.cybersource;
 
 import com.usana.paymentservice.model.ServiceRequest;
 import com.usana.paymentservice.model.ServiceResponse;
